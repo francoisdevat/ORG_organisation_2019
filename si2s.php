@@ -54,6 +54,14 @@ for ($theta_variable = $theta_min, $i = 0; $theta_variable < $theta_max; $theta_
 	array_push($coords,[$x, $y]);
 }
 
+//print_r($coords[5]);
+//print_r($coords[0]);
+
+echo'
+<svg width="500" height="500">
+	<line x1="253" y1="650" x2="1000" y2="450" stroke="black"/>
+</svg>';
+
 for ($i = 0; $i < count($tabPerson); $i++) {
 	for ($j = 0; $j < count($tabPerson[$i]->buddys); $j++) {
 		for ($k = 0; $k < count($tabPerson); $k++) {
@@ -61,11 +69,10 @@ for ($i = 0; $i < count($tabPerson); $i++) {
 			//echo($tabPerson[$k]->prenom);
 			if ($tabPerson[$i]->buddys[$j] == $tabPerson[$k]->prenom) {
 				//echo('test');
-				echo'
+				/*echo'
 					<svg width="500" height="500">
 						<line x1='.$coords[$k][0].' y1='.$coords[$k][1].' x2='.$coords[$i][0].' y2='.$coords[$i][1].' stroke="black"/>
-					</svg>';
-				//relier xi, yi avec xk, yk
+					</svg>';*/
 			}
 		}
 	}
