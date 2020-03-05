@@ -7,30 +7,32 @@ class Person
 	public $prenom;
 	public $fonction;
 	public $buddys;
+	public $frequency;
 
-	public function __construct($photo, $theta_variabled_photo, $prenom, $fonction, $buddys)  #Constructeur crée une personne avec ca photo, son nom... 
+	public function __construct($photo, $theta_variabled_photo, $prenom, $fonction, $buddys, $frequency)  #Constructeur crée une personne avec ca photo, son nom... 
 	{
 			$this->photo = $photo;
 			$this->id_photo = $theta_variabled_photo;
 			$this->prenom = $prenom;
 			$this->fonction = $fonction;
 			$this->buddys = $buddys;
+			$this->$frequency = $frequency;
 	}
 }
 
 # Création des differentes Personnes via le Construteur 
-$patrick = new Person('./items/johan/pat.PNG', 100, 'Patrick', 'Directeur', ['Olege', 'Gabriel', 'Yoan']);
-$olege = new Person('./items/johan/olege.PNG', 101, 'Olege', 'Technicien', ['Olege', 'Gabriel', 'Yoan']);
-$johan = new Person('./items/johan/johan.PNG', 102, 'Johan', 'Stagiaire', ['Olege', 'Gabriel', 'Yoan']);
-$charles = new Person('./items/johan/charles.PNG', 103, 'Charles', 'Technicien', ['Olege', 'Gabriel', 'Yoan']);
-$caroline = new Person('./items/johan/caroline.PNG', 104, 'Caroline', 'Secretaire', ['Olege', 'Gabriel', 'Yoan']);
-$gabriel = new Person('./items/johan/gabriel.PNG', 105, 'Gabriel', 'Ingenieure', ['Olege', 'Gabriel', 'Yoan']);
-$yoann = new Person('./items/johan/yoan.PNG', 106, 'Yoann', 'Technicien', ['Olege', 'Gabriel', 'Yoan']);
-$herve = new Person('./items/johan/herve.PNG', 107, 'Herve', 'Ingenieure', ['Olege', 'Gabriel', 'Yoan']);
-$nabil = new Person('./items/johan/nabil.PNG', 108, 'Nabil', 'Ingenieure', ['Olege', 'Gabriel', 'Yoan']);
-$groupe = new Person('./items/johan/groupe.jpg', 108, 'Groupe Rouge', 'Client SI2S', ['Olege', 'Gabriel', 'Yoan']);
-$balibaris = new Person('./items/johan/balibaris.jpg', 108, 'Balibaris', 'Client SI2S', ['Olege', 'Gabriel', 'Yoan']);
-$theta_variablentuitae = new Person('./items/johan/intuitae.jpg', 108, 'Intuitae', 'Client SI2S', ['Olege', 'Gabriel', 'Yoan']);
+$patrick = new Person('./items/johan/pat.PNG', 100, 'Patrick', 'Directeur', ['Olege', 'Gabriel', 'Yoann'], [2, 4, 6]);
+$olege = new Person('./items/johan/olege.PNG', 101, 'Olege', 'Technicien', ['Olege', 'Gabriel', 'Yoann'], [2, 4, 10]);
+$johan = new Person('./items/johan/johan.PNG', 102, 'Johan', 'Stagiaire', ['Olege', 'Gabriel', 'Yoann'], [2, 4, 6]);
+$charles = new Person('./items/johan/charles.PNG', 103, 'Charles', 'Technicien', ['Olege', 'Gabriel', 'Yoann'], [2, 4, 6]);
+$caroline = new Person('./items/johan/caroline.PNG', 104, 'Caroline', 'Secretaire', ['Olege', 'Gabriel', 'Yoann'], [2, 4, 6]);
+$gabriel = new Person('./items/johan/gabriel.PNG', 105, 'Gabriel', 'Ingenieure', ['Olege', 'Gabriel', 'Yoann'], [2, 4, 6]);
+$yoann = new Person('./items/johan/yoan.PNG', 106, 'Yoann', 'Technicien', ['Olege', 'Gabriel', 'Yoann'], [2, 4, 6]);
+$herve = new Person('./items/johan/herve.PNG', 107, 'Herve', 'Ingenieure', ['Olege', 'Gabriel', 'Yoann'], [2, 4, 6]);
+$nabil = new Person('./items/johan/nabil.PNG', 108, 'Nabil', 'Ingenieure', ['Olege', 'Gabriel', 'Yoann'], [2, 4, 6]);
+$groupe = new Person('./items/johan/groupe.jpg', 108, 'Groupe Rouge', 'Client SI2S', ['Olege', 'Gabriel', 'Yoann'], [2, 4, 6]);
+$balibaris = new Person('./items/johan/balibaris.jpg', 108, 'Balibaris', 'Client SI2S', ['Olege', 'Gabriel', 'Yoann'], [2, 4, 6]);
+$theta_variablentuitae = new Person('./items/johan/intuitae.jpg', 108, 'Intuitae', 'Client SI2S', ['Olege', 'Gabriel', 'Yoann'], [2, 4, 6]);
 
 #tableau contenant les personnes
 $tabPerson = array($patrick, $olege, $johan, $charles, $caroline, $gabriel, $yoann, $herve, $nabil, $groupe, $balibaris, $theta_variablentuitae);
@@ -53,30 +55,16 @@ for ($theta_variable = $theta_min, $i = 0; $theta_variable < $theta_max; $theta_
 	0px;" src="'.$tabPerson[$i]->photo.'" alt="patrick"/> <h3>'.$tabPerson[$i]->prenom.'  '.$tabPerson[$i]->fonction.'</h3></div> ';
 }
 
-//print_r($coords[5]);
-//print_r($coords[0]);
-
-echo'
-<svg width="500" height="500">
-	<line x1="253" y1="650" x2="100" y2="450" stroke="black"/>
-</svg>';
-
-echo'
-<svg width="500" height="500">
-	<line x1="100" y1="450" x2="50" y2="120" stroke="black"/>
-</svg>';
-
 for ($i = 0; $i < count($tabPerson); $i++) {
 	for ($j = 0; $j < count($tabPerson[$i]->buddys); $j++) {
 		for ($k = 0; $k < count($tabPerson); $k++) {
-			//echo($tabPerson[$i]->buddys[$j]);
-			//echo($tabPerson[$k]->prenom);
 			if ($tabPerson[$i]->buddys[$j] == $tabPerson[$k]->prenom) {
-				//echo('test');
 				echo'
-					<svg width="500" height="500">
-						<line x1="'.$coords[$k][0].'" y1="'.$coords[$k][1].'" x2="'.$coords[$i][0].'" y2="'.$coords[$i][1].'" stroke="black"/>
-					</svg>';
+					<div id="div2" style="position:absolute">
+					<svg width="500000" height="50000000">
+						<line x1="'.$coords[$k][0].'" y1="'.$coords[$k][1].'" x2="'.$coords[$i][0].'" y2="'.$coords[$i][1].'" style="stroke:rgb(255,0,0);stroke-width:6" />
+					</svg>
+					</div>';
 			}
 		}
 	}
