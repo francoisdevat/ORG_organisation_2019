@@ -47,11 +47,10 @@ for ($theta_variable = $theta_min, $i = 0; $theta_variable < $theta_max; $theta_
 {
 	$x = $x_start + $r * cos($theta_variable);
 	$y = $y_start + $r * sin($theta_variable);
-	
+
+	array_push($coords,[$x, $y]);
 	echo'<div id="div1" style="top:'.$y.'; left:'.$x.';  position:absolute;"> <img style="width: 80px; height: 8
 	0px;" src="'.$tabPerson[$i]->photo.'" alt="patrick"/> <h3>'.$tabPerson[$i]->prenom.'  '.$tabPerson[$i]->fonction.'</h3></div> ';
-	
-	array_push($coords,[$x, $y]);
 }
 
 //print_r($coords[5]);
@@ -59,7 +58,12 @@ for ($theta_variable = $theta_min, $i = 0; $theta_variable < $theta_max; $theta_
 
 echo'
 <svg width="500" height="500">
-	<line x1="253" y1="650" x2="1000" y2="450" stroke="black"/>
+	<line x1="253" y1="650" x2="100" y2="450" stroke="black"/>
+</svg>';
+
+echo'
+<svg width="500" height="500">
+	<line x1="100" y1="450" x2="50" y2="120" stroke="black"/>
 </svg>';
 
 for ($i = 0; $i < count($tabPerson); $i++) {
@@ -69,10 +73,10 @@ for ($i = 0; $i < count($tabPerson); $i++) {
 			//echo($tabPerson[$k]->prenom);
 			if ($tabPerson[$i]->buddys[$j] == $tabPerson[$k]->prenom) {
 				//echo('test');
-				/*echo'
+				echo'
 					<svg width="500" height="500">
-						<line x1='.$coords[$k][0].' y1='.$coords[$k][1].' x2='.$coords[$i][0].' y2='.$coords[$i][1].' stroke="black"/>
-					</svg>';*/
+						<line x1="'.$coords[$k][0].'" y1="'.$coords[$k][1].'" x2="'.$coords[$i][0].'" y2="'.$coords[$i][1].'" stroke="black"/>
+					</svg>';
 			}
 		}
 	}
