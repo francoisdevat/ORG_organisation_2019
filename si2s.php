@@ -36,12 +36,25 @@ $balibaris = new Person('./items/johan/balibaris.jpg', 108, 'Balibaris', 'Client
 $entuitae = new Person('./items/johan/intuitae.jpg', 108, 'Intuitae', 'Client SI2S', ['Olege', 'Gabriel', 'Yoann'], ['3', '6', '1']);
 
 #FRANCOIS
+$nicolas = new Person('./item/francois/nicolas.PNG', 100, 'Nicolas', 'Directeur', ['Emeline', 'Charlie', 'Pierre', 'Mathieu' 'Eve'], ['3', '3', '3', '3', '6']);
+$emeline = new Person('./item/francois/emeline.PNG', 101, 'Emeline', 'Ingenieure', ['Nicolas', 'Francois' 'Marc'], ['3', '6', '6');
+$francois = new Person('./item/francois/francois.PNG', 102, 'Francois', 'Stagiaire', ['Emeline', 'Marc'], ['6', '6']);
+$marc = new Person('./item/francois/marc.PNG', 103, 'Marc', 'Technicien', ['Emeline', 'Francois'], ['6', '6']);
+$charlie = new Person('./item/francois/charlie.PNG', 104, 'Charlie', 'Ingenieure', ['Nicolas', 'Camille', 'Mateo'], ['3', '6', '6']);
+$camille = new Person('./item/francois/camille.PNG',105, 'Camille', 'Stagiaire', ['Charlie', 'Mateo'], ['6', '6']);
+$mateo = new Person('.item/francois/mateo.PNG', 106, 'Mateo', 'Technicien', ['Camille', 'Chalie'], ['6', '6']);
+$pierre = new Person('.item/francois/pierre.PNG', 107, 'Pierre', 'Technicien', ['Nicolas', 'Clorox'], ['3', '3']);
+$mathieu = new Person('.item/francois/mathieu.PNG', 108, 'Mathieu', 'Chargé Relation Client', ['Clorox', 'Nicolas', 'Technip', 'Topaz'], ['3', '3', '3', '1');
+$eve = new Person('.item/francois/mathieu.PNG', 108, 'Eve', 'Secretaire', ['Nicolas', 'Technip', 'Clorox', 'Topaz'], ['6', '1', '1', '1']);
+$technip = new Person('.item/francois/technip.PNG', 108, 'Technip','Client GTS', ['Mathieu', 'Eve'], ['3', '1']);
+$topaz = new Person('.item/francois/topaz.PNG', 108, 'Topaz', 'CLient GTS', ['Mathieu', 'Eve'], ['1', '1']);
+$clorox = new Person('.item/francois/clorox.PNG', 108, 'Clorox', 'Client GTS', ['Pierre', 'Mathieu', 'Eve'], ['3', '3', '1']);
 
 #PAUL
 
 #tableau contenant les personnes
 $tabPersonJohan = array($patrick, $olege, $johan, $charles, $caroline, $gabriel, $yoann, $herve, $nabil, $groupe, $balibaris, $entuitae);
-$tabPersonFrancois = array();
+$tabPersonFrancois = array($nicolas, $emeline, $charlie, $mateo, $pierre, $mathieu, $francois $ $camille, $eve, $marc $technip, $topaz, $clorox);
 $tabPersonPaul = array();
 
 #Création d'un cercle pour afficher les personnes
